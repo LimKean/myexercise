@@ -27,10 +27,12 @@ public class DeleteServlet extends HttpServlet {
         IUserDao dao = new UserDaoImpl();
         boolean flag = dao.delete(Integer.valueOf(id));
         if (flag) {
+            //删除成功，查询所有用户并返回
             List<User> list = dao.getUserAll();
             req.setAttribute("userAll",list);
             req.getRequestDispatcher("jsp/viewAll.jsp").forward(req,resp);
         } else{
+            //失败直接跳转至error.jsp页面
             resp.sendRedirect("jsp/error.jsp");
         }
     }
