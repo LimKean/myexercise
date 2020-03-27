@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 注册
+ * 注册功能
  */
 public class Register extends HttpServlet {
 
